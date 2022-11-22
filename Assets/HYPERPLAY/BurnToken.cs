@@ -35,8 +35,8 @@ public class BurnToken : MonoBehaviour
         request.SetRequestHeader("Content-Type", "application/json");
 
         await request.SendWebRequest();
-        string balanceHex = request.downloadHandler.text; // ["0x638105AA1B69406560f6428aEFACe3DB9da83c64"]
-        string account = balanceHex.Substring(2, balanceHex.Length - 4); // 0x638105AA1B69406560f6428aEFACe3DB9da83c64
+        string response = request.downloadHandler.text; // ["0x638105AA1B69406560f6428aEFACe3DB9da83c64"]
+        string account = response.Substring(2, response.Length - 4); // 0x638105AA1B69406560f6428aEFACe3DB9da83c64
         return account;
     }
 }
