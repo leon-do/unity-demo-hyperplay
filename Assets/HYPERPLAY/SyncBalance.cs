@@ -4,10 +4,12 @@ using System.Threading.Tasks;
 using UnityEngine;
 using System.Numerics;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class SyncBalance : MonoBehaviour
 {
     public GameObject Player;
+    public Text PlayerBalance;
 
     async public void OnSyncBalance()
     {
@@ -17,12 +19,18 @@ public class SyncBalance : MonoBehaviour
         string contract = "0xDD6ff2bA7fD02D19e8e4e1d99b65802eD9705437";
         string account = await GetAccount();
         BigInteger balanceOf = await ERC20.BalanceOf(chain, network, contract, account);
-        print("Balance Of: " + balanceOf);
+
+        // display on button
+        PlayerBalance.text = "Sync Balance: " + balanceOf.ToString();
 
         if (balanceOf > 0)
         {
             // change player color to red
             Player.GetComponent<Renderer>().material.color = Color.red;
+        }
+        else
+        {
+            Player.GetComponent<Renderer>().material.color = Color.white;
         }
     }
 
