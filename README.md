@@ -12,7 +12,7 @@
 
 ![](https://user-images.githubusercontent.com/19412160/203439551-cd6347e2-e245-4c8c-8560-c6a2187b754f.png)
 
-- Sync Balance: Uses web3.unity to fetch users balance. If the user has a token, then change charcter to red
+- Sync Balance: Uses web3.unity to fetch users balance. If the user has a token, then change character to red
   - Logic found in `/Assets/HYPERPLAY/SyncBalance.cs`
 - Mint Token: Connects to metamask wallet to mint a token
   - Logic found in `/Assets/HYPERPLAY/MintToken.cs`
