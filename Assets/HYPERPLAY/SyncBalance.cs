@@ -45,6 +45,7 @@ public class SyncBalance : MonoBehaviour
 
         await request.SendWebRequest();
         string response = request.downloadHandler.text; // ["0x638105AA1B69406560f6428aEFACe3DB9da83c64"]
+        print(response);
         string account = response.Substring(2, response.Length - 4); // 0x638105AA1B69406560f6428aEFACe3DB9da83c64
         return account;
     }
